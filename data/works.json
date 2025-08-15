@@ -1,0 +1,107 @@
+[
+  {
+    "id": "w001",
+    "slug": "portrait-stylization",
+    "title": "人像风格化（ComfyUI）",
+    "date": "2025-01-10",
+    "tags": ["人物", "风格化", "LoRA"],
+    "cover": "/placeholders/cover.jpg",
+    "gallery": ["/placeholders/cover.jpg", "/placeholders/cover.jpg", "/placeholders/cover.jpg"],
+    "summary": "基于ControlNet+LoRA的人像风格化成品展示，实现了从真实人像到动漫风格的完美转换。",
+    "prompt": "```\n正向提示词:\n1girl, anime style, beautiful detailed eyes, long flowing hair, soft lighting, masterpiece, best quality, ultra detailed\n\n负向提示词:\nlow quality, blurry, distorted, bad anatomy, extra limbs, watermark\n\n关键参数:\n- Sampling method: DPM++ 2M Karras\n- Steps: 30\n- CFG Scale: 7.0\n- Denoising strength: 0.75\n```",
+    "model_info": {
+      "base": "SDXL 1.0",
+      "loras": ["anime-face-v2.safetensors", "style-enhance-v1.safetensors"],
+      "controlnet": ["openpose", "canny"]
+    },
+    "sampler": {
+      "seed": 123456789,
+      "steps": 30,
+      "cfg": 7.0,
+      "width": 1024,
+      "height": 1024,
+      "sampler": "DPM++ 2M Karras"
+    },
+    "notes": "主要难点在于保持人物特征的同时实现风格转换，通过调整ControlNet权重和LoRA强度找到最佳平衡点。"
+  },
+  {
+    "id": "w002",
+    "slug": "product-photography",
+    "title": "商业产品摄影（ComfyUI）",
+    "date": "2025-01-08",
+    "tags": ["产品", "商业", "写真"],
+    "cover": "/placeholders/cover.jpg",
+    "gallery": ["/placeholders/cover.jpg", "/placeholders/cover.jpg"],
+    "summary": "使用ComfyUI生成高质量的商业产品摄影图片，适用于电商和广告用途。",
+    "prompt": "```\n正向提示词:\nproduct photography, luxury watch, studio lighting, white background, professional, high resolution, commercial quality\n\n负向提示词:\nlow quality, amateur, poor lighting, cluttered background\n```",
+    "model_info": {
+      "base": "Realistic Vision v6.0",
+      "loras": ["product-photo-v3.safetensors"],
+      "controlnet": ["depth"]
+    },
+    "sampler": {
+      "seed": 987654321,
+      "steps": 25,
+      "cfg": 6.5,
+      "width": 1024,
+      "height": 1024,
+      "sampler": "Euler a"
+    },
+    "notes": "重点在于光影控制和背景处理，使用Depth ControlNet确保产品轮廓清晰。"
+  },
+  {
+    "id": "w003",
+    "slug": "fantasy-landscape",
+    "title": "奇幻风景创作（ComfyUI）",
+    "date": "2025-01-05",
+    "tags": ["风景", "奇幻", "概念艺术"],
+    "cover": "/placeholders/cover.jpg",
+    "gallery": [
+      "/placeholders/cover.jpg",
+      "/placeholders/cover.jpg",
+      "/placeholders/cover.jpg",
+      "/placeholders/cover.jpg"
+    ],
+    "summary": "创作奇幻风格的概念艺术风景，融合了魔法元素和自然景观。",
+    "prompt": "```\n正向提示词:\nfantasy landscape, magical forest, floating islands, aurora borealis, mystical atmosphere, concept art, detailed, cinematic lighting\n\n负向提示词:\nrealistic, modern elements, low quality, blurry\n```",
+    "model_info": {
+      "base": "DreamShaper v8",
+      "loras": ["fantasy-art-v2.safetensors", "landscape-enhance-v1.safetensors"],
+      "controlnet": ["scribble"]
+    },
+    "sampler": {
+      "seed": 456789123,
+      "steps": 35,
+      "cfg": 8.0,
+      "width": 1536,
+      "height": 864,
+      "sampler": "DPM++ SDE Karras"
+    },
+    "notes": "使用Scribble ControlNet进行构图控制，通过多层次的光影处理营造神秘氛围。"
+  },
+  {
+    "id": "w004",
+    "slug": "character-design",
+    "title": "角色设计（ComfyUI）",
+    "date": "2025-01-03",
+    "tags": ["角色", "设计", "概念艺术"],
+    "cover": "/placeholders/cover.jpg",
+    "gallery": ["/placeholders/cover.jpg", "/placeholders/cover.jpg"],
+    "summary": "原创角色设计，包含多个角度和表情变化的完整角色设定。",
+    "prompt": "```\n正向提示词:\ncharacter design, original character, multiple views, turnaround sheet, anime style, detailed clothing, expressive face\n\n负向提示词:\nexisting character, copyright, low detail, inconsistent style\n```",
+    "model_info": {
+      "base": "AnythingV5",
+      "loras": ["character-sheet-v1.safetensors"],
+      "controlnet": ["reference"]
+    },
+    "sampler": {
+      "seed": 789123456,
+      "steps": 28,
+      "cfg": 7.5,
+      "width": 1024,
+      "height": 1024,
+      "sampler": "DPM++ 2M"
+    },
+    "notes": "关键在于保持角色一致性，使用Reference ControlNet确保多角度下的特征统一。"
+  }
+]

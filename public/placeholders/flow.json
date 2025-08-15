@@ -1,0 +1,13 @@
+{
+  "workflow": {
+    "nodes": [],
+    "links": [],
+    "groups": [],
+    "config": {},
+    "extra": {},
+    "version": 0.4
+  },
+  "description": "ComfyUI Workflow JSON - Coming Soon",
+  "author": "Alex Chen",
+  "created": "2025-01-15"
+}
