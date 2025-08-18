@@ -21,10 +21,6 @@ export function Sidebar() {
   const pathname = usePathname()
 
   const handleNavClick = (href: string) => {
-    if (href === "/about" || href === "/contact") {
-      alert("Coming Soon! 此页面正在开发中...")
-      return
-    }
     router.push(href)
   }
 
